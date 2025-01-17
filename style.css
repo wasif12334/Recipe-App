@@ -152,24 +152,27 @@
     }
 .recipe-details{
     width: 500px;
-    height: auto;
-    background: rgba(25, 184, 157, 0.822);
+    height: 500px;
+    background: rgb(223, 223, 223);
     /* place-items: cente   r; */
     display: none;
+    padding: 10px;
+    border-radius: 10px;
     position: fixed;
     top: 50%;
+    
     left: 50%;
-    transform: translate(-50%,50%);
+    transform: translate(-50%,-50%);
 
 }
 .recipe-details>i{
-    color: rgb(73, 3, 3);
+    color: rgb(119, 1, 1);
     /* background: orangered; */
-    padding: 6px;
+    padding: 3px;
     border: 1px solid ;
-    border-radius: 48%;
+ border-radius: 48%;
     float: right;
-    margin: 10px;
+    margin: 5px;
     cursor: pointer;
     font-weight: bold;
     text-shadow: 12px 10px 10px;

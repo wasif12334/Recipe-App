@@ -36,31 +36,38 @@ async function GetRecipe(value){
     
 }
 
+GetRecipe("");
 let popUpDetails = (meal)=>{
-    console.log('view btn clicked');
-    console.log(meal);
-    
+      
     recipeDetails.innerHTML =`
     <h2>${meal.strMeal}</h2>
-    <ul>${fetchMealIngridents(meal)}</ul>
-
-    <h3>${meal.strInstructions}</h3>
-    
-    
-    `
+    <ul><h3>Ingridents:</h3> ${fetchMealIngridents(meal)}</ul>
+    <h3>Instructions:</h3>
+    <p>${meal.strInstructions}</p> 
+      `
     recipeDetails.parentElement.style.display = 'block';
 }
-
 let fetchMealIngridents = (meal)=>{
+    console.log('fetch function called');
+    
     let ingredentlist = " ";
     for(let i=1;i<=20;i++){
     let ingredent=meal[`strIngredient${i}`]
     if(ingredent){
         let mesures = meal[`strMeasure${i}`]
-        ingredentlist+=`<li>${measure } ${ ingredent}</li>`
+        ingredentlist+=`<li>${mesures} ${ ingredent}</li>`
     }
+    else
+     {
+        break;
+     }
+    
     }
+    return ingredentlist;
+    console.log('fetch function ended');
 }
+
+//Event Listener on seacrh Btn 
 searchBtn.addEventListener('click',(e)=>{
     e.preventDefault();
     
@@ -70,4 +77,7 @@ searchBtn.addEventListener('click',(e)=>{
         seacrhInput.value = " ";
     
 })
-
+//Event Listener on recipecrossBtn 
+recipeCrossBtn.addEventListener('click',()=>{
+    recipeDetails.parentElement.style.display='none';
+})
