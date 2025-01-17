@@ -7,7 +7,7 @@ let recipeDetails = document.querySelector('.recipe-description');
 
 // Function for acessing the api and showing output 
 async function GetRecipe(value){
-    header.innerHTML = `Fetching Recipes`
+    header.innerHTML = `Fetching Recipes...........`
     let data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`)
     let resopnse =await data.json();
     header.innerHTML = `${value.toUpperCase()} RECIPES`
@@ -36,7 +36,7 @@ async function GetRecipe(value){
     
 }
 
-GetRecipe("");
+
 let popUpDetails = (meal)=>{
       
     recipeDetails.innerHTML =`
